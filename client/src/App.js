@@ -29,7 +29,10 @@ function App() {
 		method: 'POST',
 		body: data	
 		})
-	if (req.ok) {alert('you have logged in')}
+	let res = await req.json()
+	if (req.ok) {
+		console.log('user', res)
+		alert('you have logged in')}
 	else {alert('invalid email/password')}
 	}
   return (
@@ -47,8 +50,8 @@ function App() {
 
 	<h2>Login</h2>
 	<form onSubmit={handleSubmit} ref={form}>
-		<input type="email" placeholder="email"/><br /><br />
-		<input type="password" placeholder="password" />
+		<input type="email" name="email" placeholder="email"/><br /><br />
+		<input type="password" name="password" placeholder="password" />
 		<input type="submit"/>
 	</form>
 	</div>
