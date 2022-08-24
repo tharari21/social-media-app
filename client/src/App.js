@@ -25,7 +25,7 @@ function App() {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 	const data = new FormData(form.current)
-	let req = await fetch('/login', {
+	let req = await fetch('http://localhost:3100/login', {
 		method: 'POST',
 		body: data	
 		})
